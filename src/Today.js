@@ -16,8 +16,12 @@ export default function Today(props) {
     return true;
   })
   return (
-    <div>
-      <ListRender list={filteredList}/>
+    <div className='To'>
+      <h1 className='Heading'>Today</h1><hr></hr><br></br><br></br>
+      <h4 className='Heading'>Tasks list</h4>
+      <hr className='line'></hr>
+      <ListRender list={filteredList} />
+      
     </div>
   )
 }

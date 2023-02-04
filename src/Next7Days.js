@@ -12,7 +12,10 @@ export default function Next7Days(props) {
     return false
   })
   return (
-    <div>
+    <div className='To'>
+      <h1 className='Heading'>Next 7 Days</h1><hr></hr><br></br>
+      <h4 className='Heading'>Tasks list</h4>
+      <hr className='line'></hr>
       <ListRender list={filteredlist}/>
     </div>
   )

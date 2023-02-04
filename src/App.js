@@ -4,7 +4,7 @@ import './App.css';
 import SideNav from "./SideNav";
 
 function App() {
-  const [active,setActive] = useState("INBOX")
+  const [active,setActive] = useState("")
   return (
     <div id='main'>
       <header>
@@ -12,7 +12,8 @@ function App() {
           <div className='col-md-2'>
             <SideNav change={setActive}/>
           </div>
-          <div className='col-md-10'>
+          <div className='col-md-4'>
+            
             <MainSection active={active}/>
           </div>
         </div>

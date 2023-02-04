@@ -26,30 +26,46 @@ export default function Inbox(props) {
     const cancelHandler=()=>{
         setNewTask(false)
     }
+    const deleteHandler = (index) => {
+        const updatedList = props.list.filter((_,i) => i !== index)
+        props.setNewTask(updatedList)
+        }
    
     
   return (
-    <div>
-        <h3>INBOX</h3>
+    <div className='To'>
+        <h1 className='Heading'>INBOX</h1><hr></hr><br></br><br></br>
         {!newTask && (
             <button className='new' onClick={newtaskHandler}>+Add New</button>
         )}
         {newTask && (
             <form className='newtask-box'>
-                <input type='text' ref={titleRef}/>
+                <p> Write your task: <input type='text' ref={titleRef} placeholder='Write your task'/></p>
+                
                 <div className='button'>
-                    <button className='new' onClick={addHandler}>Add Task</button>
-                    <button className='new' onClick={cancelHandler}>Cancel</button>
-                    <input type="date" ref={calendarRef} defaultValue="2023-01-04"/>
+                    <p>Choose Date: <input type="date" ref={calendarRef} defaultValue="2023-01-04"/></p>
+                
+                    <button className='newB' onClick={addHandler}>Add Task</button>
+
+                    <button className='newA' onClick={cancelHandler}>   Cancel</button><br></br><br></br>
+                    
                 </div>
             </form>
-        )}
+        )}<br></br>
+        <h4 className='Heading'>Your Task</h4><br></br><hr className='line'></hr>
         <div>
-            {props.list.map((list)=>{
+            {props.list.map((list,index)=>{
                 return(
-                    <div className='box' key={list.number}>
-                        {list.title} ({list.date.toLocaleString()})
-                        <button className="delete" >Delete</button>
+                    
+                    <div className='box' key={index}>
+                        
+                        <p><ul>
+                            <li>
+                            {list.title}  ({list.date.toLocaleString()})
+                        <button className='newD' onClick={() => deleteHandler(index)}>Delete</button>
+                        </li>
+                        </ul>
+                        </p><hr className='line1'></hr>
 
                     </div>
                 )

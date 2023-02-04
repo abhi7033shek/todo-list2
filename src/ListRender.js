@@ -6,11 +6,13 @@ export default function ListRender(props) {
         {props.list.map((list)=>{
             return(
                 <div className='box' key={list.number}>
-                    <div className='task'>
-                        {list.title} ({list.date.toLocaleDateString()})
-                       
-
-                    </div>
+                    <p><ul>
+                            <li>
+                            {list.title}  ({list.date.toLocaleString()})
+                        <button className="delete" >Delete</button>
+                        </li>
+                        </ul>
+                        </p><hr className='line1'></hr>
                 </div>
             )
         })}

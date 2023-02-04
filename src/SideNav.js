@@ -2,23 +2,27 @@ import React from 'react'
 
 export default function SideNav(props) {
   return (
-   <ul className='side-nav'>
-    <li onClick={()=>{props.change("INBOX")}}>
-        <div>
+    
+   <div className='side-nav'>
+    <h1 className='Heading'>TODO LIST</h1><hr></hr><br></br>
+    <button className='newS' onClick={()=>{props.change("INBOX")}}>
+       
             INBOX
-        </div>
-    </li>
-    <li onClick={()=>{props.change("TODAY")}}>
-        <div>
+       
+    </button><br></br>
+    <div>
+    <button className='newS' onClick={()=>{props.change("TODAY")}}>
+        
             TODAY
-        </div>
-    </li>
-    <li onClick={()=>{props.change("NEXT")}}>
-        <div>
+       
+    </button><br></br>
+    </div>
+    <button className='newS' onClick={()=>{props.change("NEXT")}}>
+       
             NEXT 7 DAYS
-        </div>
-    </li>
+        
+    </button>
 
-   </ul>
+   </div>
   )
 }
